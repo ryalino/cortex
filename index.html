@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORTEX TBI Prognosis Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>CORTEX TBI Prognosis Calculator</h1>
+  <p>Calculate the 30-day and 6-month mortality for patients with severe TBI.</p>
+
+  <form id="cortexForm">
+    <!-- Prehospital Model Inputs -->
+    <h2>Prehospital Model</h2>
+
+    <label for="age">Age (years):</label>
+    <input type="number" id="age" name="age" required><br>
+
+    <label for="gcs">Glasgow Coma Scale (GCS):</label>
+    <select id="gcs" name="gcs" required>
+      <option value="3">GCS 3</option>
+      <option value="4">GCS 4</option>
+      <option value="5">GCS 5</option>
+      <option value="6">GCS 6</option>
+      <option value="7">GCS 7</option>
+    </select><br>
+
+    <label for="asa">ASA Physical Status ≥3:</label>
+    <select id="asa" name="asa" required>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select><br>
+
+    <label for="pupil">Pupil Reactivity:</label>
+    <select id="pupil" name="pupil" required>
+      <option value="2">Both pupils react</option>
+      <option value="1">One pupil reacts</option>
+      <option value="0">No pupils react</option>
+    </select><br>
+
+    <label for="etco2">End-Tidal CO2 (mmHg):</label>
+    <input type="number" id="etco2" name="etco2" step="0.1" required><br><br>
+
+    <!-- Combined Model Inputs -->
+    <h2>Combined Model</h2>
+
+    <label for="hb">Hemoglobin (g/dL):</label>
+    <input type="number" id="hb" name="hb" step="0.1"><br>
+
+    <label for="aptt">aPTT (seconds):</label>
+    <input type="number" id="aptt" name="aptt" step="0.1"><br>
+
+    <label for="ph">Arterial pH:</label>
+    <input type="number" id="ph" name="ph" step="0.01"><br>
+
+    <label for="cistern">Basal Cisterns:</label>
+    <select id="cistern" name="cistern">
+      <option value="present">Present</option>
+      <option value="compressed">Compressed</option>
+      <option value="absent">Absent</option>
+    </select><br>
+
+    <label for="ivh">Intraventricular Hemorrhage:</label>
+    <select id="ivh" name="ivh">
+      <option value="present">Present</option>
+      <option value="absent">Absent</option>
+    </select><br>
+
+    <label for="midline">Midline Shift >5 mm:</label>
+    <select id="midline" name="midline">
+      <option value="present">Present</option>
+      <option value="absent">Absent</option>
+    </select><br><br>
+
+    <input type="submit" value="Calculate">
+  </form>
+
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
